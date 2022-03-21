@@ -37,11 +37,38 @@ Array.prototype.getRandom = function () {
 };
 
 function pairs(names) {
-  // Your code goes here
+  let a = [];
+  if (names == null) {
+    return [];
+  } else if ((names.length % 2 == 0) & (names.length > 0)) {
+    //even condition.
+    while (names.length > 1) {
+      let b = [];
+      b.push(names.getRandom());
+      b.push(names.getRandom());
+      a.push(b);
+    }
+    return a;
+  } else if ((names.length % 2 == 1) & (names.length > 0)) {
+    //odd condition.
+    while (names.length > 1) {
+      let b = [];
+      b.push(names.getRandom());
+      b.push(names.getRandom());
+      a.push(b);
+    }
+    if (names.length === 1) {
+      let b = [];
+      b.push(names.getRandom());
+      a.push(b);
+    }
+    return a;
+  }
+  return [];
 }
 
 module.exports = pairs;
 
-console.log(
-  pairs(["Asis", "Hamsa", "Fawas", "Mishmish", "Hussein", "Lailz", "Mr Potato"])
-);
+/*console.log(
+  pairs(["aa", "Hamsa", "Fawas", "Mishmish", "Hussein", "Lailz", "Mr Potato"])
+);*/
